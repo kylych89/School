@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
-from School.teacher.models import Teacher
+from teacher.models import Teacher
 
 # Register your models here.
 
@@ -8,7 +8,7 @@ from School.teacher.models import Teacher
 class TeacherAdmin(admin.ModelAdmin):
     list_display = (
         'teacher_name',
-        'teacher_last_name'
+        'teacher_last_name',
         'image',
         'phone',
         'address',

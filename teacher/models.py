@@ -10,4 +10,9 @@ class Teacher(models.Model):
     
     
     def __str__(self) -> str:
-        return self.user_name
+        return self.teacher_name
+
+
+    class Meta:
+        verbose_name = 'Учитель'
+        verbose_name_plural = 'Учителя'

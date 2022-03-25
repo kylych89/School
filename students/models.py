@@ -1,5 +1,5 @@
 from django.db import models
- 
+from klass.models import Classroom
 
 # Create your models here.
 class Students(models.Model):
@@ -8,10 +8,10 @@ class Students(models.Model):
     number_parents = models.IntegerField(verbose_name='Номер родителей')
     place_of_residence = models.CharField(max_length=255, verbose_name='Место проживания')
     photo_student = models.ImageField(verbose_name='Фото студента', upload_to = 'product/%Y/%m/%d')
-    class_ = models.ForeignKey('class.Classroom', on_delete=models.CASCADE)
+    klass = models.ForeignKey(Classroom, on_delete=models.CASCADE)
 
     def __str__(self) -> str:
-        return f'Имя студента {self.first_name} \n Класс {self}'
+        return f'Имя студента {self.first_name} \n Класс {self.klass}'
 
 
     class Meta:

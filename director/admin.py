@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 
-from School.director.models import Director
+from director.models import Director
 
 # Register your models here.
 
@@ -13,11 +13,11 @@ class DirectorAdmin(admin.ModelAdmin):
         'image',
         'phone',
     )
-    readonly_fields = (
+    read_only = (
         'get_image',
     )
 
     def get_image(self, obj):
-        return mark_safe(f'<img src={obj.image.url} width="100" height="100"')
+        return mark_safe(f'<img src={obj.image.url} width="100" heigth="100">')
     
     get_image.short_description = "Image"

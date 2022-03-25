@@ -8,5 +8,15 @@ class Classroom(models.Model):
     class_number = models.IntegerField(verbose_name='Номер класса')
     teacher = models.ForeignKey(Teacher,on_delete=models.CASCADE)
 
+
+
     def str(self) -> str:
-        return f'Класс: {self.class_number}{self.class_name}\n классный руководитель: {self.teacher}'
+        return self.class_name
+
+
+
+    class Meta:
+        verbose_name = 'Класс'
+        verbose_name_plural = 'Классы'
+
+

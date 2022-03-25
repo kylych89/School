@@ -8,4 +8,9 @@ class Director(models.Model):
     phone = models.CharField(max_length=25)
 
     def __str__(self) -> str:
-        return self.user_name
+        return self.first_name
+
+
+    class Meta:
+        verbose_name = 'Директор'
+        verbose_name_plural = 'Директоры'
