@@ -10,8 +10,8 @@ class Classroom(models.Model):
 
 
 
-    def str(self) -> str:
-        return self.class_name
+    def __str__(self) -> str:
+        return f'Класс:{self.class_number}\nБуква класса:{self.class_name}'
 
 
 
