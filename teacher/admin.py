@@ -9,9 +9,9 @@ class TeacherAdmin(admin.ModelAdmin):
     list_display = (
         'teacher_name',
         'teacher_last_name',
-        'image',
         'phone',
         'address',
+        'get_image'
     )
     readonly_fields = (
         'get_image',

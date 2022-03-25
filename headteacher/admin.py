@@ -10,7 +10,7 @@ class HeadTeacherAdmin(admin.ModelAdmin):
     list_display = (
         'first_name',
         'last_name',
-        'image_head_teacher',
+        'get_image',
     )
 
     read_only = (
@@ -18,6 +18,6 @@ class HeadTeacherAdmin(admin.ModelAdmin):
     )
 
     def get_image(self, obj):
-        return mark_safe(f'<img src={obj.image.url} width="100" heigth="100"')
+        return mark_safe(f'<img src= {obj.image_head_teacher.url} width="100" heigth="110">')
 
-    get_image.short_description = 'Image'
+    get_image.short_description = "Image"

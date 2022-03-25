@@ -10,14 +10,14 @@ class DirectorAdmin(admin.ModelAdmin):
     list_display = (
         'first_name',
         'last_name',
-        'image',
         'phone',
+        'get_image'
     )
     read_only = (
         'get_image',
     )
 
     def get_image(self, obj):
-        return mark_safe(f'<img src={obj.image.url} width="100" heigth="100">')
-    
+        return mark_safe(f'<img src= {obj.image.url} width="100" heigth="110">')
+
     get_image.short_description = "Image"

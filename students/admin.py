@@ -11,14 +11,14 @@ class StudentsAdmin(admin.ModelAdmin):
         'last_name',
         'number_parents',
         'place_of_residence',
-        'photo_student',
-        'klass'
+        'klass',
+        'get_image'
     )
     readonly_fields = (
         'get_image',
     )
 
     def get_image(self, obj):
-        return mark_safe(f'<img src={obj.image.url} width="100" height="100"')
-    
+        return mark_safe(f'<img src= {obj.photo_student.url} width="100" heigth="110">')
+
     get_image.short_description = "Image"
